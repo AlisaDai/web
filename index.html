@@ -6,6 +6,38 @@
         
     <!-- CSS Files -->
     <link rel="stylesheet" href="CSS/base.css" type="text/css">
+    <script type="text/javascript">
+        onload = function(){
+            var num=3;
+            document.getElementById('add').onclick=function(){
+                num = num + 1;
+                if(num===12){
+                    alert("Only can have 10 choices");
+                    num = 11;
+                }
+                for(var i=0; i<num; i++){
+                    if(i===3){
+                        var newCho = 'Food Three：<input type="text" name="food[]" value="">';
+                    }else if(i===4){
+                        var newCho = 'Food Four：<input type="text" name="food[]" value="">';
+                    }else if(i===5){
+                        var newCho = 'Food Five：<input type="text" name="food[]" value="">';
+                    }else if(i===6){
+                        var newCho = 'Food Six：<input type="text" name="food[]" value="">';
+                    }else if(i===7){
+                        var newCho = 'Food Seven：<input type="text" name="food[]" value="">';
+                    }else if(i===8){
+                        var newCho = 'Food Eight：<input type="text" name="food[]" value="">';
+                    }else if(i===9){
+                        var newCho = 'Food Nine：<input type="text" name="food[]" value="">';
+                    }else if(i===10){
+                        var newCho = 'Food Ten：<input type="text" name="food[]" value="">';
+                    }
+                }
+                document.getElementById('field').innerHTML += newCho;
+            }
+        }
+    </script>
         
 	</head>
 
@@ -36,21 +68,15 @@
         <div class="userInput">
             <h2>This section can be used for the user input.</h2>
             <form action="food.php" method="post">
+                <div  id="field">
                 Food One:<br>
                 <input type="text" name="food[]" placeholder="Apple">
                 <br>
                 Food Two:<br>
                 <input type="text" name="food[]" value="">
+                </div>
                 <br>
-                Food Three:<br>
-                <input type="text" name="food[]" value="">
-                <br>
-                Food Four:<br>
-                <input type="text" name="food[]" value="">
-                <br>
-                Food Five:<br>
-                <input type="text" name="food[]" value="">
-                <br><br>
+                <input type="button" value="Add a Choice" id="add">
                 <input type="submit" value="Randomize">
             </form> 
         </div>
